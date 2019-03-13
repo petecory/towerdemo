@@ -19,7 +19,7 @@
       state: directory
   run_once: true
 
-- hosts: EVE_devices
+- hosts: switches
   gather_facts: false
 
   tasks:
@@ -29,7 +29,7 @@
          - show run
      register: config
 
-- hosts: EVE_devices
+- hosts: switches
   gather_facts: false
 
   tasks:
