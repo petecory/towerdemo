@@ -15,7 +15,7 @@
 
    - name: Create Directory {{hostvars.localhost.DTG}}
      file:
-      path: ~/backups/{{hostvars.localhost.DTG}}
+      path: ~/cory/backups/{{hostvars.localhost.DTG}}
       state: directory
   run_once: true
 
@@ -33,7 +33,7 @@
   gather_facts: false
 
   tasks:
-   - name: Save output to ~/backups/
+   - name: Save output to ~/cory/backups/
      copy:
        content: "{{config.stdout[0]}}"
-       dest: "~/backups/{{hostvars.localhost.DTG}}/{{inventory_hostname}}-{{hostvars.localhost.DTG}}-config.txt"
+       dest: "~/cory/backups/{{hostvars.localhost.DTG}}/{{inventory_hostname}}-{{hostvars.localhost.DTG}}-config.txt"
