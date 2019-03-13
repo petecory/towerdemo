@@ -15,7 +15,7 @@
 
    - name: Create Directory {{hostvars.localhost.DTG}}
      file:
-      path: /home/cory/backups/{{hostvars.localhost.DTG}}
+      path: /etc/ansible/backups/{{hostvars.localhost.DTG}}
       state: directory
   run_once: true
 
@@ -33,7 +33,7 @@
   gather_facts: false
 
   tasks:
-   - name: Save output to /home/cory/backups/
+   - name: Save output to /etc/ansible/backups/
      copy:
        content: "{{config.stdout[0]}}"
-       dest: "/home/cory/backups/{{hostvars.localhost.DTG}}/{{inventory_hostname}}-{{hostvars.localhost.DTG}}-config.txt"
+       dest: "/etc/ansible/backups/{{hostvars.localhost.DTG}}/{{inventory_hostname}}-{{hostvars.localhost.DTG}}-config.txt"
